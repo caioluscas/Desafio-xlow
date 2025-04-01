@@ -25,14 +25,15 @@ function criarProduto(produto) {
     divProduto.appendChild(descricao);
 
     //preço
+    let preco = document.createElement("p");
+    
     let primeiroItem = produto.items?.[0];
     let primeiroVendedor = primeiroItem?.sellers?.[0];
     let precoComDesconto = primeiroVendedor?.commertialOffer?.Price || "Indisponível";
     let precoNormal = primeiroVendedor?.commertialOffer?.ListPrice || "Indisponível";
     
-    let preco = document.createElement("p");
     preco.innerHTML = `<strong>Preço:</strong> <s>R$ ${precoNormal}</s> <span style="color: red;">R$ ${precoComDesconto}</span>`;
-    
+    divProduto.appendChild(preco);
 
     // Exibir imagens de variação abaixo do nome
     let variaçõesContainer = document.createElement("div");
