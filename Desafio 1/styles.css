@@ -1,0 +1,53 @@
+#array-produtos {
+    display: grid;  /* Alterar para grid */
+    gap: 20px;
+    grid-template-columns: repeat(4, 1fr); /* Inicialmente 4 colunas no desktop */
+}
+
+.grid-1 {
+    grid-template-columns: repeat(1, 1fr); /* Mobile: 1 produto por linha */
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr); /* Mobile: 2 produtos por linha */
+}
+
+.grid-4 {
+    grid-template-columns: repeat(4, 1fr); /* Desktop: 4 produtos por linha */
+}
+
+.grid-5 {
+    grid-template-columns: repeat(5, 1fr); /* Desktop: 5 produtos por linha */
+}
+
+
+.produto {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+}
+
+.imagem-principal {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.variacoes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.imagem-variacao {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.imagem-variacao:hover {
+    opacity: 0.7;
+}
+
