@@ -21,12 +21,15 @@ function criarProduto(produto) {
 
     // Descrição do produto (caso exista)
     let descricao = document.createElement("p");
-    descricao.innerHTML = `<strong>Descrição:</strong> ${produto.productTitle || "Sem descrição disponível"}`;
+    let descricaoPrimeiroProduto = produto.items?.[0];
+    let descricaoProduto = descricaoPrimeiroProduto?.nameComplete || "Sem descrição disponível";
+   
+    descricao.innerHTML = `<strong>Descrição:</strong> ${descricaoProduto}`;
     divProduto.appendChild(descricao);
 
     //preço
     let preco = document.createElement("p");
-    
+
     let primeiroItem = produto.items?.[0];
     let primeiroVendedor = primeiroItem?.sellers?.[0];
     let precoComDesconto = primeiroVendedor?.commertialOffer?.Price || "Indisponível";
