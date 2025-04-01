@@ -27,7 +27,7 @@ function criarProduto(produto) {
     descricao.innerHTML = `<strong>Descrição:</strong> ${descricaoProduto}`;
     divProduto.appendChild(descricao);
 
-    //preço
+    //Preço
     let preco = document.createElement("p");
 
     let primeiroItem = produto.items?.[0];
