@@ -33,6 +33,7 @@ async function main() {
 
 
         configurarToggleLayout();
+        atualizarContador(); 
     } catch (error) {
         console.error("Erro ao consumir API:", error);
     }
@@ -73,7 +74,7 @@ async function main() {
     }
     
 
-    main().then(atualizarContador);
+
     
 
 
