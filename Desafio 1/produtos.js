@@ -19,7 +19,7 @@ function criarProduto(produto) {
     marca.innerHTML = `<strong>Marca:</strong> ${produto.brand}`;
     divProduto.appendChild(marca);
 
-    // Descrição do produto (caso exista)
+    // Descrição do produto 
     let descricao = document.createElement("p");
     let descricaoPrimeiroProduto = produto.items?.[0];
     let descricaoProduto = descricaoPrimeiroProduto?.nameComplete || "Sem descrição disponível";
@@ -29,12 +29,10 @@ function criarProduto(produto) {
 
     //Preço
     let preco = document.createElement("p");
-
     let primeiroItem = produto.items?.[0];
     let primeiroVendedor = primeiroItem?.sellers?.[0];
     let precoComDesconto = primeiroVendedor?.commertialOffer?.Price || "Indisponível";
     let precoNormal = primeiroVendedor?.commertialOffer?.ListPrice || "Indisponível";
-    
     preco.innerHTML = `<strong>Preço:</strong> <s>R$ ${precoNormal}</s> <span style="color: red;">R$ ${precoComDesconto}</span>`;
     divProduto.appendChild(preco);
 
@@ -54,6 +52,17 @@ function criarProduto(produto) {
     });
 
     divProduto.appendChild(variaçõesContainer);
+
+    // Botão "Comprar"
+    let botaoComprar = document.createElement("button");
+    botaoComprar.classList.add("botao-comprar");
+    botaoComprar.textContent = "Comprar";
+    divProduto.appendChild(botaoComprar);
+    
+    //Rick Astley :)
+    botaoComprar.onclick = function() {
+        window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank"); 
+    };
 
     return divProduto;
 }
