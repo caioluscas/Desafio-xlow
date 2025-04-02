@@ -63,9 +63,18 @@ async function main() {
 
         botaoToggle.addEventListener("click", aplicarLayoutCorreto);
 
-        // Garante que o layout inicial esteja correto ao carregar a página
+
         window.addEventListener("resize", aplicarLayoutCorreto);
     }
+
+    function atualizarContador() {
+        let totalProdutos = document.querySelectorAll("#array-produtos .produto").length;
+        document.getElementById("contador-produtos").textContent = `Produtos exibidos: ${totalProdutos}`;
+    }
+    
+
+    main().then(atualizarContador);
+    
 
 
 main();
